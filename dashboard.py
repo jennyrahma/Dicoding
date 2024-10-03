@@ -30,12 +30,12 @@ import streamlit as st
 ### Gathering Data
 """
 
+!ls
 
-
-day_df = pd.read_csv('/content/Dashboard/day.csv')
+day_df = pd.read_csv('day.csv')
 day_df.head()
 
-hour_df = pd.read_csv('/content/Dashboard/hour.csv')
+hour_df = pd.read_csv('hour.csv')
 
 hour_df.head()
 
@@ -297,6 +297,10 @@ all_df = pd.concat([df1, df2], ignore_index=True)
 all_df.to_csv("all_data.csv", index=False)
 
 all_df.to_csv("all_data.csv", index=False)
+
+!pip install streamlit babel
+
+!pip freeze requirements.txt
 
 # Menulis ke file requirements.txt
 with open('requirements.txt', 'w') as f:
