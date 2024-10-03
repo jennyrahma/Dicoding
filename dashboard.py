@@ -23,39 +23,17 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import streamlit as st
 
 """## Data Wrangling
 
 ### Gathering Data
 """
 
-import zipfile
-import os
 
-# Tentukan path file ZIP yang diunggah
-zip_file_path = '/content/Bike_sharing_dataset.zip'  # ganti dengan nama file ZIP Anda
-
-# Ekstrak file ZIP
-with zipfile.ZipFile(zip_file_path, 'r') as zip_ref:
-    zip_ref.extractall('/content/Dashboard')  # Ekstrak ke folder 'extracted_files'
-
-# Tampilkan isi folder yang diekstrak
-os.listdir('/content/Dashboard')
-
-import shutil
-
-# Hapus direktori "extracted_files" beserta isinya
-shutil.rmtree('/content/sample_data')
-
-# Cek apakah direktori berhasil dihapus
-os.listdir('/content/')
 
 day_df = pd.read_csv('/content/Dashboard/day.csv')
-
 day_df.head()
-
-from google.colab import files
-uploaded = files.upload()
 
 hour_df = pd.read_csv('/content/Dashboard/hour.csv')
 
@@ -320,6 +298,9 @@ all_df.to_csv("all_data.csv", index=False)
 
 all_df.to_csv("all_data.csv", index=False)
 
+!pip install streamlit babel
+
+!pip freeze requirements.txt
 
 # Menulis ke file requirements.txt
 with open('requirements.txt', 'w') as f:
