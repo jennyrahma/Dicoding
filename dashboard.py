@@ -29,9 +29,6 @@ import seaborn as sns
 ### Gathering Data
 """
 
-from google.colab import files
-uploaded = files.upload()
-
 import zipfile
 import os
 
