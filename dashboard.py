@@ -30,8 +30,6 @@ import streamlit as st
 ### Gathering Data
 """
 
-!ls
-
 day_df = pd.read_csv('day.csv')
 day_df.head()
 
