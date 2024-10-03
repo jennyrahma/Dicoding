@@ -30,7 +30,7 @@ import seaborn as sns
 """
 
 day_df = pd.read_csv('day.csv')
-df.head()
+day_df.head()
 
 hour_df = pd.read_csv('hour.csv')
 
