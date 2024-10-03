@@ -296,8 +296,6 @@ all_df.to_csv("all_data.csv", index=False)
 
 all_df.to_csv("all_data.csv", index=False)
 
-!pip freeze requirements.txt
-
 # Menulis ke file requirements.txt
 with open('requirements.txt', 'w') as f:
     f.write('pandas\n')
