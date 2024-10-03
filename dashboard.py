@@ -30,10 +30,10 @@ import streamlit as st
 ### Gathering Data
 """
 
-day_df = pd.read_csv('day.csv')
+day_df = pd.read_csv('/content/Dashboard/day.csv')
 day_df.head()
 
-hour_df = pd.read_csv('hour.csv')
+hour_df = pd.read_csv('/content/Dashboard/hour.csv')
 
 hour_df.head()
 
