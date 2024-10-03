@@ -296,8 +296,6 @@ all_df.to_csv("all_data.csv", index=False)
 
 all_df.to_csv("all_data.csv", index=False)
 
-!pip install streamlit babel
-
 !pip freeze requirements.txt
 
 # Menulis ke file requirements.txt
