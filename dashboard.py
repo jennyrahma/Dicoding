@@ -277,4 +277,5 @@ with open('requirements.txt', 'w') as f:
     f.write('matplotlib\n')
     f.write('seaborn\n')
     f.write('streamlit\n')
+streamlit run app.py
 
