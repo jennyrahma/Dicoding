@@ -270,6 +270,9 @@ all_df.to_csv("all_data.csv", index=False)
 
 all_df.to_csv("all_data.csv", index=False)
 
+!pip install -r requirements.txt
+!pip install streamlit
+
 # Menulis ke file requirements.txt
 with open('requirements.txt', 'w') as f:
     f.write('pandas\n')
