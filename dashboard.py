@@ -249,31 +249,6 @@ b. Kelembapan (humidity) dan kecepatan angin (windspeed) memiliki korelasi negat
 - Pertanyaan 2:
 Penyewaan sepeda cenderung meningkat pada bulan-bulan musim panas (Juni, Juli, Agustus), dengan puncak penggunaan di bulan Juli.
 
-## Analisis Lanjutan (Opsional)
-"""
-
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression
-from sklearn.metrics import mean_squared_error
-
-# Fitur dan target
-X = day_df[['temp', 'hum', 'windspeed']]
-y = day_df['cnt']
-
-# Split data
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
-
-# Membuat model regresi linier
-model = LinearRegression()
-model.fit(X_train, y_train)
-
-# Prediksi
-y_pred = model.predict(X_test)
-
-# Menghitung error
-mse = mean_squared_error(y_test, y_pred)
-print(f'Mean Squared Error: {mse}')
-
 """## Conclusion
 
 - Conclution pertanyaan 1: Suhu adalah faktor yang paling berpengaruh terhadap jumlah penyewaan sepeda, sementara kelembapan dan kecepatan angin memiliki pengaruh yang lebih kecil.
