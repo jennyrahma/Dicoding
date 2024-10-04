@@ -20,7 +20,7 @@ Original file is located at
 ## Import Semua Packages/Library yang Digunakan
 """
 
-!pip install streamlit
+pip install streamlit
 
 # Import necessary libraries
 import pandas as pd
