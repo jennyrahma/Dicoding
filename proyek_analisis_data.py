@@ -1,9 +1,9 @@
-# -*- coding: utf-8 -*-
-"""Proyek Analisis Data: Bike Sharing Dataset
-- **Nama:** Jenny Rahma Hidaya
-- **Email:** m191b4kx2057@bangkit.academy
-- **ID Dicoding:** jennyrhmaa
-"""
+# Display project information
+st.write("# Proyek Analisis Data: Bike Sharing Dataset")
+st.write("**Nama:** Jenny Rahma Hidaya")
+st.write("**Email:** m191b4kx2057@bangkit.academy")
+st.write("**ID Dicoding:** jennyrhmaa")
+
 
 # Import necessary libraries
 import pandas as pd
@@ -14,9 +14,17 @@ import streamlit as st
 
 # Load dataset
 df = pd.read_csv('day.csv')
+st.write("## Dataset")
+st.dataframe(df)  # Menampilkan DataFrame
+st.write("Dataset terdiri dari beberapa fitur seperti hari, musim, suhu, kelembaban, dan jumlah sepeda yang disewa per hari.")
+st.write("Anda dapat melihat beberapa variabel yang mungkin mempengaruhi penyewaan, seperti cuaca dan musim.")
+
+# Tampilkan head dataset
+st.write("### 5 Baris Pertama dari Dataset:")
+st.write(df.head())
 
 # Data Wrangling
-# Check for missing data
+# Gathering Data
 if df.isnull().sum().sum() == 0:
     st.write("Tidak ada missing values pada dataset.")
 else:
@@ -25,6 +33,10 @@ else:
 # Check for outliers
 st.write("Statistik Deskriptif:")
 st.write(df.describe())
+if df.isnull().sum().sum() == 0:
+    st.write("Tidak ada missing values pada dataset.")
+else:
+    st.write("Ada missing values pada dataset.")
 
 # Cleaning Data
 df['season'] = df['season'].astype('category')
