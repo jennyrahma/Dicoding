@@ -132,3 +132,4 @@ sns.heatmap(corr_matrix, annot=True, cmap='coolwarm')
 plt.title('Correlation Matrix')
 plt.show()
 
+streamlit run proyek_analisis_data.py
