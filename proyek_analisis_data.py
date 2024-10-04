@@ -9,7 +9,7 @@ import streamlit as st
 st.set_page_config(page_title="Bike Sharing Analysis", layout="wide")
 
 # Display project information
-st.markdown("<h2 style='text-align: center; color: #4CAF50;'>🚴 Proyek Analisis Data: Bike Sharing Dataset")
+st.title("🚴 Proyek Analisis Data: Bike Sharing Dataset")
 st.write("**Nama:** Jenny Rahma Hidaya")
 st.write("**Email:** m191b4kx2057@bangkit.academy")
 st.write("**ID Dicoding:** jennyrhmaa")
