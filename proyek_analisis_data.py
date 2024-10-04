@@ -129,7 +129,7 @@ season_fig = sns.boxplot(x='season', y='cnt', data=df)
 st.pyplot(season_fig.figure)
 
 st.subheader('Monthly Bike Rentals')
-month_fig = sns.lineplot(x='month', y='cnt', data=df)
+month_fig = sns.lineplot(x='mnth', y='cnt', data=df)
 st.pyplot(month_fig.figure)
 
 # Correlation matrix visualization
