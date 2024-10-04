@@ -1,16 +1,15 @@
-# Display project information
-st.write("# Proyek Analisis Data: Bike Sharing Dataset")
-st.write("**Nama:** Jenny Rahma Hidaya")
-st.write("**Email:** m191b4kx2057@bangkit.academy")
-st.write("**ID Dicoding:** jennyrhmaa")
-
-
 # Import necessary libraries
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
+
+# Display project information
+st.write("# Proyek Analisis Data: Bike Sharing Dataset")
+st.write("**Nama:** Jenny Rahma Hidaya")
+st.write("**Email:** m191b4kx2057@bangkit.academy")
+st.write("**ID Dicoding:** jennyrhmaa")
 
 # Load dataset
 df = pd.read_csv('day.csv')
