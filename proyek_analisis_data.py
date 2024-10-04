@@ -32,9 +32,6 @@ import streamlit as st
 ### Gathering Data
 """
 
-from google.colab import files
-uploaded = files.upload()
-
 # Load dataset
 df = pd.read_csv('day.csv')
 df.head()
