@@ -87,7 +87,6 @@ st.write(
 st.write(
     "Kesimpulan Pertanyaan 2: Pola penyewaan sepeda bervariasi berdasarkan musim, dengan penggunaan tertinggi di musim panas dan terendah di musim dingin."
 )
-pip install streamlit
 
 # Add a footer
 st.markdown("---")
