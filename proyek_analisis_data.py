@@ -19,27 +19,27 @@ df = pd.read_csv('day.csv')
 
 # Sidebar for user inputs
 st.sidebar.header("Pengaturan")
-selected_season = st.sidebar.selectbox("Pilih Musim", options=df['season'].unique())
+selected_season = st.sidebar.selectbox("Pilih Musim", options=df['season'].unique(), index=0)
 st.sidebar.text("Penggunaan sepeda berdasarkan musim.")
 
 # Display dataset
-st.subheader("Dataset")
+st.subheader("📊 Dataset")
 st.dataframe(df.style.highlight_max(axis=0))  # Highlight maximum values
 st.write("- Dataset terdiri dari beberapa fitur seperti hari, musim, suhu, kelembaban, dan jumlah sepeda yang disewa per hari.")
 st.write("- Anda dapat melihat beberapa variabel yang mungkin mempengaruhi penyewaan, seperti cuaca dan musim.")
 
 # Tampilkan head dataset
-st.subheader("5 Baris Pertama dari Dataset:")
+st.subheader("📋 5 Baris Pertama dari Dataset:")
 st.write(df.head())
 
 # Data Wrangling
 if df.isnull().sum().sum() == 0:
-    st.write("✅ Tidak ada missing values pada dataset.")
+    st.success("✅ Tidak ada missing values pada dataset.")
 else:
-    st.write("❌ Ada missing values pada dataset.")
+    st.error("❌ Ada missing values pada dataset.")
 
 # Check for outliers
-st.subheader("Statistik Deskriptif:")
+st.subheader("📈 Statistik Deskriptif:")
 st.write(df.describe())
 
 # Cleaning Data
@@ -59,7 +59,7 @@ st.pyplot(season_fig)
 st.write("Insight: Penggunaan sepeda tampak lebih tinggi selama musim panas dan lebih rendah di musim dingin.")
 
 # Correlation Analysis
-st.subheader('📈 Analisis Korelasi')
+st.subheader('📊 Analisis Korelasi')
 correlation = df[['atemp', 'hum', 'windspeed', 'cnt']].corr()
 plt.figure(figsize=(8, 6))
 sns.heatmap(correlation, annot=True, cmap='YlGnBu', fmt=".2f")  # Changed color palette
@@ -87,4 +87,4 @@ st.write(
 
 # Add a footer
 st.markdown("---")
-st.write("📊 *Data diambil dari Bike Sharing Dataset*")
+st.markdown("📊 *Data diambil dari Bike Sharing Dataset*")
