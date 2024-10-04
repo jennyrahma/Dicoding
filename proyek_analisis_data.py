@@ -12,6 +12,7 @@ st.markdown("<hr style='border: 2px solid #4CAF50;'>", unsafe_allow_html=True)
 
 # Display project information
 st.markdown("<h1 style='text-align: center; color: #4CAF50;'>🚴 Proyek Analisis Data: Bike Sharing Dataset</h1>", unsafe_allow_html=True)
+st.markdown("<hr style='border: 2px solid #4CAF50;'>", unsafe_allow_html=True)
 st.write("**Nama:** Jenny Rahma Hidaya")
 st.write("**Email:** m191b4kx2057@bangkit.academy")
 st.write("**ID Dicoding:** jennyrhmaa")
