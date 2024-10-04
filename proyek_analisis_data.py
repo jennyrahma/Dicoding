@@ -4,6 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
+st.markdown("<hr style='border: 2px solid #4CAF50;'>", unsafe_allow_html=True)
 
 # Set page configuration
 st.set_page_config(page_title="Bike Sharing Analysis", layout="wide")
