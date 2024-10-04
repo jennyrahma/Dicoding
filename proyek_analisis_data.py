@@ -17,11 +17,6 @@ st.markdown("**ID Dicoding:** jennyrhmaa")
 # Load dataset
 df = pd.read_csv('day.csv')
 
-# Sidebar for user inputs
-st.sidebar.header("Pengaturan")
-start_date = st.sidebar.date_input("Tanggal Mulai", value=pd.to_datetime(df['dteday'].min()))
-end_date = st.sidebar.date_input("Tanggal Akhir", value=pd.to_datetime(df['dteday'].max()))
-
 # Display dataset
 st.subheader("📊 Dataset")
 st.dataframe(df.style.highlight_max(axis=0))  # Highlight maximum values
