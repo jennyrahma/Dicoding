@@ -10,23 +10,21 @@ st.set_page_config(page_title="Bike Sharing Analysis", layout="wide")
 
 # Display project information with styling
 st.title("🚴 Proyek Analisis Data: Bike Sharing Dataset")
-st.markdown("**Nama:** Jenny Rahma Hidaya")
+st.markdown("<h2 style='text-align: center; color: #4CAF50;'>👤 Jenny Rahma Hidaya</h2>", unsafe_allow_html=True)
 st.markdown("**Email:** [m191b4kx2057@bangkit.academy](mailto:m191b4kx2057@bangkit.academy)")
 st.markdown("**ID Dicoding:** jennyrhmaa")
+
+# Add a divider
+st.markdown("---")  # Pembatas garis horizontal
 
 # Load dataset
 df = pd.read_csv('day.csv')
 
 # Display dataset with improved visuals
 st.subheader("📊 Dataset")
-st.dataframe(df.style.background_gradient(cmap='Blues', subset=['cnt'])  # Gradient untuk 'cnt'
-             .highlight_max(subset=['temp', 'atemp', 'hum', 'windspeed'], color='lightgreen')  # Highlight maximum values
-             .highlight_min(subset=['temp', 'atemp', 'hum', 'windspeed'], color='lightcoral'))  # Highlight minimum values
-
-st.write("- Ini dataset berisi berbagai fitur seperti tanggal, suhu, kelembaban, musim, dan jumlah sepeda yang disewa per hari.")
-st.write("- Variabel-variabel kayak cuaca dan musim ini bisa mempengaruhi jumlah penyewaan sepeda, lho!")
-st.info("🔍 Klik kolomnya buat lihat data lebih detail dan cek pola yang menarik!")
-
+st.dataframe(df)  # Menampilkan DataFrame
+st.write("Dataset terdiri dari beberapa fitur seperti hari, musim, suhu, kelembaban, dan jumlah sepeda yang disewa per hari.")
+st.write("Anda dapat melihat beberapa variabel yang mungkin mempengaruhi penyewaan, seperti cuaca dan musim.")
 
 
 # Tampilkan head dataset
