@@ -7,9 +7,9 @@ Original file is located at
     https://colab.research.google.com/drive/1ug4Ox4qIFDSo1koFA0XiNJE-ce12rECy
 
 # Proyek Analisis Data: [Bike Sharing Dataset]
-- **Nama:** [Input Nama]
-- **Email:** [Input Email]
-- **ID Dicoding:** [Input Username]
+- **Nama:** [Jenny Rahma Hidaya]
+- **Email:** [m191b4kx2057@bangkit.academy]
+- **ID Dicoding:** [jennyrhmaa]
 
 ## Menentukan Pertanyaan Bisnis
 
@@ -58,16 +58,12 @@ df.describe()
 ### Cleaning Data
 """
 
-# Optional cleaning steps (if needed)
 df['season'] = df['season'].astype('category')
 
 """**Insight:**
 - Mengubah kolom 'season' menjadi kategori karena memiliki kategori tertentu seperti musim semi, musim panas, dll.
 
 ## Exploratory Data Analysis (EDA)
-
-### Explore ...
-"""
 
 # Visualize bike rentals per season
 sns.boxplot(x='season', y='cnt', data=df)
@@ -91,7 +87,7 @@ sns.heatmap(correlation, annot=True, cmap='coolwarm')
 plt.title('Korelasi antara Variabel Cuaca dan Penyewaan Sepeda')
 plt.show()
 
-"""### Pertanyaan 2:"""
+"""### Pertanyaan 2: Pola Penggunaan Berdasarkan Waktu
 
 # Visualisasi tren penggunaan sepeda sepanjang waktu
 df['mnth'] = pd.to_datetime(df['dteday']).dt.month
@@ -107,10 +103,6 @@ plt.show()
 - Suhu dan musim adalah faktor yang paling mempengaruhi penyewaan sepeda.
 
 - Penggunaan sepeda cenderung meningkat selama bulan-bulan musim panas dan menurun di musim dingin.
-
-## Analisis Lanjutan (Opsional)
-"""
-
 
 
 """## Conclusion
@@ -133,6 +125,10 @@ month_fig = sns.lineplot(x='mnth', y='cnt', data=df)
 st.pyplot(month_fig.figure)
 
 # Correlation matrix visualization
-st.subheader('Correlation Matrix')
-corr_fig = sns.heatmap(corr_matrix, annot=True, cmap='coolwarm')
-st.pyplot(corr_fig.figure)
+numeric_df = df.select_dtypes(include=[np.number])
+corr_matrix = numeric_df.corr()
+
+sns.heatmap(corr_matrix, annot=True, cmap='coolwarm')
+plt.title('Correlation Matrix')
+plt.show()
+
