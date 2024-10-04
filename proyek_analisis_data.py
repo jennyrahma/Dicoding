@@ -17,11 +17,24 @@ st.markdown("**ID Dicoding:** jennyrhmaa")
 # Load dataset
 df = pd.read_csv('day.csv')
 
-# Display dataset
+# Display dataset with color styling
 st.subheader("📊 Dataset")
-st.dataframe(df.style.highlight_max(axis=0))  # Highlight maximum values
+
+# Define a function to highlight the maximum values in the DataFrame
+def highlight_max(s):
+    is_max = s == s.max()
+    return ['background-color: yellow' if v else '' for v in is_max]
+
+# Apply the highlight_max function to the numeric columns of the DataFrame
+styled_df = df.style.apply(highlight_max, subset=['cnt', 'temp', 'atemp', 'hum', 'windspeed'])
+
+# Display the styled DataFrame
+st.dataframe(styled_df)
+
+# Additional Information
 st.write("- Dataset terdiri dari beberapa fitur seperti hari, musim, suhu, kelembaban, dan jumlah sepeda yang disewa per hari.")
 st.write("- Anda dapat melihat beberapa variabel yang mungkin mempengaruhi penyewaan, seperti cuaca dan musim.")
+
 
 # Tampilkan head dataset
 st.subheader("📋 5 Baris Pertama dari Dataset:")
