@@ -10,12 +10,14 @@ st.set_page_config(page_title="Bike Sharing Analysis", layout="wide")
 
 # Display project information with styling
 st.title("🚴 Proyek Analisis Data: Bike Sharing Dataset")
-st.markdown("<h2 style='text-align: center; color: #4CAF50;'>👤 Jenny Rahma Hidaya</h2>", unsafe_allow_html=True)
-st.markdown("**Email:** [m191b4kx2057@bangkit.academy](mailto:m191b4kx2057@bangkit.academy)")
-st.markdown("**ID Dicoding:** jennyrhmaa")
+st.markdown("<h2 style='text-align: center; color: #4CAF50;'>Nama: Jenny Rahma Hidaya</h2>", unsafe_allow_html=True)
+st.markdown("<h4 style='text-align: center; color: #555;'>Email: [m191b4kx2057@bangkit.academy](mailto:m191b4kx2057@bangkit.academy)</h4>", unsafe_allow_html=True)
+st.markdown("<h4 style='text-align: center; color: #555;'>ID Dicoding: jennyrhmaa</h4>", unsafe_allow_html=True)
 
-# Add a divider
-st.markdown("---")  # Pembatas garis horizontal
+# Beautiful divider
+st.markdown("<hr style='border: 2px solid #4CAF50;'>", unsafe_allow_html=True)
+
+# Load dataset
 
 # Load dataset
 df = pd.read_csv('day.csv')
