@@ -9,7 +9,7 @@ import streamlit as st
 st.set_page_config(page_title="Bike Sharing Analysis", layout="wide")
 
 # Display project information
-st.title("🚴 Proyek Analisis Data: Bike Sharing Dataset")
+st.markdown("<h1 style='text-align: center; color: #4CAF50;'>🚴 Proyek Analisis Data: Bike Sharing Dataset</h1>", unsafe_allow_html=True)
 st.write("**Nama:** Jenny Rahma Hidaya")
 st.write("**Email:** m191b4kx2057@bangkit.academy")
 st.write("**ID Dicoding:** jennyrhmaa")
@@ -24,8 +24,8 @@ df = pd.read_csv('day.csv')
 # Display dataset with improved visuals
 st.subheader("📊 Dataset")
 st.dataframe(df)  # Menampilkan DataFrame
-st.write("Dataset terdiri dari beberapa fitur seperti hari, musim, suhu, kelembaban, dan jumlah sepeda yang disewa per hari.")
-st.write("Anda dapat melihat beberapa variabel yang mungkin mempengaruhi penyewaan, seperti cuaca dan musim.")
+st.write("-Dataset terdiri dari beberapa fitur seperti hari, musim, suhu, kelembaban, dan jumlah sepeda yang disewa per hari.")
+st.write("-Anda dapat melihat beberapa variabel yang mungkin mempengaruhi penyewaan, seperti cuaca dan musim.")
 
 
 # Tampilkan head dataset
