@@ -19,8 +19,8 @@ df = pd.read_csv('day.csv')
 
 # Sidebar for user inputs
 st.sidebar.header("Pengaturan")
-selected_season = st.sidebar.selectbox("Pilih Musim", options=df['season'].unique(), index=0)
-st.sidebar.text("Penggunaan sepeda berdasarkan musim.")
+start_date = st.sidebar.date_input("Tanggal Mulai", value=pd.to_datetime(df['dteday'].min()))
+end_date = st.sidebar.date_input("Tanggal Akhir", value=pd.to_datetime(df['dteday'].max()))
 
 # Display dataset
 st.subheader("📊 Dataset")
