@@ -19,10 +19,10 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
 
-"""## Data Wrangling
+## ---- Data Wrangling ----
 
 ### Gathering Data
-"""
+
 # Load dataset
 df = pd.read_csv('day.csv')
 
@@ -33,7 +33,7 @@ st.write("-Dataset terdiri dari beberapa fitur seperti hari, musim, suhu, kelemb
 st.write("-Anda dapat melihat beberapa variabel yang mungkin mempengaruhi penyewaan, seperti cuaca dan musim.")
 
 ### Assessing Data
-"""
+
 # Tampilkan head dataset
 st.subheader("📋 5 Baris Pertama dari Dataset:")
 st.write(df.head())
@@ -49,7 +49,7 @@ st.subheader("📈 Statistik Deskriptif:")
 st.write(df.describe())
 
 ### Cleaning Data
-"""
+
 df['season'] = df['season'].astype('category')
 
 # Exploratory Data Analysis (EDA)
@@ -66,7 +66,6 @@ st.pyplot(season_fig)
 st.write("Insight: Penggunaan sepeda tampak lebih tinggi selama musim panas dan lebih rendah di musim dingin.")
 
 ### Pertanyaan 1:
-"""
 # Correlation Analysis
 st.subheader('📊 Analisis Korelasi')
 correlation = df[['atemp', 'hum', 'windspeed', 'cnt']].corr()
@@ -75,7 +74,7 @@ sns.heatmap(correlation, annot=True, cmap='YlGnBu', fmt=".2f")  # Changed color 
 plt.title('Korelasi antara Variabel Cuaca dan Penyewaan Sepeda', fontsize=16)
 st.pyplot(plt.gcf())
 
-"""### Pertanyaan 2:"""
+### Pertanyaan 2
 # Monthly bike rentals
 df['mnth'] = pd.to_datetime(df['dteday']).dt.month
 st.subheader('📅 Tren Penyewaan Sepeda per Bulan')
@@ -87,8 +86,8 @@ plt.ylabel('Jumlah Penyewaan', fontsize=12)
 st.pyplot(month_fig)
 
 ## Analisis Lanjutan (Opsional)
-# RFM Analysis
-"""
+# ---- RFM Analysis ----
+
 # Set the aesthetic style of the plots
 sns.set_style("whitegrid")
 plt.rcParams['axes.titlesize'] = 18
