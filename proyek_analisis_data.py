@@ -43,8 +43,7 @@ else:
     st.error("❌ Ada missing values pada dataset.")
 # Insight
 st.write("Insight: Beberapa fitur numerik seperti 'temp' (suhu) dan 'cnt' (jumlah sepeda) mungkin perlu divisualisasikan lebih lanjut untuk melihat distribusi data.")
-
-st.markdown("<hr style='border: 2px solid #4CAF50;'>", unsafe_allow_html=True)
+st.markdown("---")
 
 # Check for outliers
 st.subheader("📈 Statistik Deskriptif:")
@@ -55,7 +54,9 @@ st.write(df.describe())
 df['season'] = df['season'].astype('category')
 
 # Exploratory Data Analysis (EDA)
+st.markdown("<hr style='border: 2px solid #4CAF50;'>", unsafe_allow_html=True)
 st.title('🔍 Analisis Penyewaan Sepeda')
+st.markdown("<hr style='border: 2px solid #4CAF50;'>", unsafe_allow_html=True)
 st.subheader('📊 Penyewaan Sepeda per Musim')
 season_fig = plt.figure(figsize=(10, 6))
 sns.boxplot(x='season', y='cnt', data=df, palette="Set2")  # Added color palette
@@ -91,11 +92,11 @@ plt.xlabel('Bulan', fontsize=12)
 plt.ylabel('Jumlah Penyewaan', fontsize=12)
 st.pyplot(month_fig)
 
-st.markdown("<hr style='border: 2px solid #4CAF50;'>", unsafe_allow_html=True)
-
 ## Analisis Lanjutan (Opsional)
 # Add header and title
+st.markdown("<hr style='border: 2px solid #4CAF50;'>", unsafe_allow_html=True)
 st.markdown("<h1 style='text-align: center; color: #4CAF50;'>🚴 Analisis Lanjutan: Bike Sharing Dataset</h1>", unsafe_allow_html=True)
+st.markdown("<hr style='border: 2px solid #4CAF50;'>", unsafe_allow_html=True)
 st.markdown("<hr style='border: 2px solid #4CAF50;'>", unsafe_allow_html=True)
 
 # ---- RFM Analysis ----
@@ -128,7 +129,7 @@ st.markdown("""
     - **Frequency** mencerminkan berapa kali penyewaan terjadi.
     - **Monetary** mewakili jumlah total penyewaan sepeda per hari, memberikan gambaran tentang tren penyewaan.
 """)
-st.markdown("<hr style='border: 2px solid #4CAF50;'>", unsafe_allow_html=True)
+st.markdown("---")
 
 # ---- Geoanalysis ----
 st.subheader("🗺️ Geoanalysis berdasarkan Musim")
@@ -150,7 +151,7 @@ st.markdown("""
     - Pemilik bisnis dapat merencanakan persediaan dan promosi musiman dengan lebih efektif.
 """)
 
-st.markdown("<hr style='border: 2px solid #4CAF50;'>", unsafe_allow_html=True)
+st.markdown("---")
 
 # ---- Clustering ----
 st.subheader("🔍 Clustering Berdasarkan Suhu dan Kelembapan")
