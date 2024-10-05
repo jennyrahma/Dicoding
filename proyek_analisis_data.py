@@ -91,9 +91,6 @@ st.pyplot(month_fig)
 st.markdown("<h1 style='text-align: center; color: #4CAF50;'>🚴 Analisis Lanjutan: Bike Sharing Dataset</h1>", unsafe_allow_html=True)
 st.markdown("<hr style='border: 2px solid #4CAF50;'>", unsafe_allow_html=True)
 
-# Load dataset
-df = pd.read_csv('day.csv')
-
 # ---- RFM Analysis ----
 st.subheader("📊 RFM Analysis")
 st.markdown("""
@@ -113,15 +110,6 @@ df['Monetary'] = df['cnt']  # Jumlah penyewaan per hari
 # Menggabungkan nilai RFM
 rfm_df = df[['dteday', 'Recency', 'Frequency', 'Monetary']]
 
-# Tampilkan DataFrame RFM dengan format yang lebih menarik
-st.subheader("📊 RFM Analysis")
-st.markdown("""
-    **RFM Analysis** membantu memahami perilaku penyewaan sepeda berdasarkan tiga faktor utama:
-    - **Recency**: Seberapa baru penyewaan terakhir.
-    - **Frequency**: Frekuensi penyewaan sepeda.
-    - **Monetary**: Jumlah penyewaan sepeda per hari.
-""")
-
 # Tampilkan DataFrame RFM
 st.write("Tabel RFM Analysis:")
 st.dataframe(rfm_df.head().style.applymap(lambda x: 'background-color: #4CAF50' if x == rfm_df['Recency'].min() else '', subset=['Recency']))  # Highlight Recency terendah
@@ -139,7 +127,7 @@ st.subheader("🗺️ Geoanalysis berdasarkan Musim")
 st.markdown("Visualisasi penyewaan sepeda berdasarkan musim:")
 
 # Plot Geoanalysis
-plt.figure(figsize=(10, 6))
+plt.figure(figsize=(8, 5))
 sns.scatterplot(x='season', y='cnt', size='cnt', sizes=(20, 200), data=df, alpha=0.6, palette='coolwarm')
 plt.title('Penyewaan Sepeda Berdasarkan Musim', fontsize=16)
 plt.xlabel('Musim', fontsize=12)
@@ -171,7 +159,7 @@ centroids = data.groupby(np.floor(data.index / (len(data) / num_clusters))).mean
 data['Cluster'] = (data.index // (len(data) // num_clusters))
 
 # Plot Clustering
-plt.figure(figsize=(10, 6))
+plt.figure(figsize=(8, 5))
 sns.scatterplot(x='atemp', y='hum', hue='Cluster', data=data, palette='Set1', alpha=0.6)
 plt.scatter(centroids['atemp'], centroids['hum'], color='black', marker='X', s=100, label='Centroids')
 plt.title('Clustering Penyewaan Sepeda Berdasarkan Suhu dan Kelembapan', fontsize=16)
