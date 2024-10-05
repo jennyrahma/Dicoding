@@ -184,9 +184,8 @@ st.markdown("""
     - Faktor cuaca ini dapat digunakan untuk memprediksi permintaan penyewaan sepeda.
 """)
 
-st.markdown("<hr style='border: 2px solid #4CAF50;'>", unsafe_allow_html=True)
-
 # Conclusion
+st.markdown("<hr style='border: 2px solid #4CAF50;'>", unsafe_allow_html=True)
 st.subheader('📝 Kesimpulan')
 st.write(
     "Kesimpulan Pertanyaan 1: Faktor cuaca seperti suhu dan musim memiliki pengaruh besar terhadap penyewaan sepeda."
@@ -194,6 +193,7 @@ st.write(
 st.write(
     "Kesimpulan Pertanyaan 2: Pola penyewaan sepeda bervariasi berdasarkan musim, dengan penggunaan tertinggi di musim panas dan terendah di musim dingin."
 )
+st.markdown("<hr style='border: 2px solid #4CAF50;'>", unsafe_allow_html=True)
 
 # Add a footer
 st.markdown("---")
