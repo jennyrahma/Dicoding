@@ -1,3 +1,10 @@
+# Import necessary libraries
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+import streamlit as st
+
 # Set page configuration
 st.set_page_config(page_title="Bike Sharing Analysis", layout="wide")
 
@@ -11,13 +18,6 @@ st.write("**Email:** m191b4kx2057@bangkit.academy")
 st.write("**ID Dicoding:** jennyrhmaa")
 
 st.markdown("<hr style='border: 2px solid #4CAF50;'>", unsafe_allow_html=True)
-
-# Import necessary libraries
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-import streamlit as st
 
 ## ---- Data Wrangling ----
 
