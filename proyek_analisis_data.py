@@ -43,7 +43,6 @@ else:
     st.error("❌ Ada missing values pada dataset.")
 # Insight
 st.write("Insight: Beberapa fitur numerik seperti 'temp' (suhu) dan 'cnt' (jumlah sepeda) mungkin perlu divisualisasikan lebih lanjut untuk melihat distribusi data.")
-st.markdown("---")
 
 # Check for outliers
 st.subheader("📈 Statistik Deskriptif:")
