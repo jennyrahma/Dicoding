@@ -187,8 +187,6 @@ st.markdown("""
 # Conclusion
 st.markdown("<hr style='border: 2px solid #4CAF50;'>", unsafe_allow_html=True)
 st.subheader('📝 Kesimpulan')
-st.markdown("<hr style='border: 2px solid #4CAF50;'>", unsafe_allow_html=True)
-
 st.write(
     "Kesimpulan Pertanyaan 1: Faktor cuaca seperti suhu dan musim memiliki pengaruh besar terhadap penyewaan sepeda."
 )
