@@ -96,7 +96,6 @@ st.pyplot(month_fig)
 st.markdown("<hr style='border: 2px solid #4CAF50;'>", unsafe_allow_html=True)
 st.markdown("<h1 style='text-align: center; color: #4CAF50;'>🚴 Analisis Lanjutan: Bike Sharing Dataset</h1>", unsafe_allow_html=True)
 st.markdown("<hr style='border: 2px solid #4CAF50;'>", unsafe_allow_html=True)
-st.markdown("<hr style='border: 2px solid #4CAF50;'>", unsafe_allow_html=True)
 
 # ---- RFM Analysis ----
 st.subheader("📊 RFM Analysis")
