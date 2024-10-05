@@ -87,24 +87,9 @@ st.pyplot(month_fig)
 
 ## Analisis Lanjutan (Opsional)
 # ---- RFM Analysis ----
-
-# Set the aesthetic style of the plots
-sns.set_style("whitegrid")
-plt.rcParams['axes.titlesize'] = 18
-plt.rcParams['axes.labelsize'] = 14
-plt.rcParams['legend.fontsize'] = 12
-plt.rcParams['xtick.labelsize'] = 12
-plt.rcParams['ytick.labelsize'] = 12
-
-# Load dataset
-df = pd.read_csv('day.csv')
-
 # Add header and title
 st.markdown("<h1 style='text-align: center; color: #4CAF50;'>🚴 Analisis Lanjutan: Bike Sharing Dataset</h1>", unsafe_allow_html=True)
 st.markdown("<hr style='border: 2px solid #4CAF50;'>", unsafe_allow_html=True)
-
-# Load dataset
-df = pd.read_csv('day.csv')
 
 # ---- RFM Analysis ----
 st.subheader("📊 RFM Analysis")
@@ -125,18 +110,9 @@ df['Monetary'] = df['cnt']  # Jumlah penyewaan per hari
 # Menggabungkan nilai RFM
 rfm_df = df[['dteday', 'Recency', 'Frequency', 'Monetary']]
 
-# Tampilkan DataFrame RFM dengan format HTML
+# Tampilkan DataFrame RFM
 st.write("Tabel RFM Analysis:")
-st.markdown(rfm_df.style.set_table_attributes('style="width: 100%; border-collapse: collapse;"')
-            .set_table_styles(
-                [{'selector': 'th',
-                  'props': [('background-color', '#4CAF50'),
-                            ('color', 'white'),
-                            ('font-weight', 'bold'),
-                            ('text-align', 'center')]}]
-            ).hide_index()
-            .format({'Recency': '{:.0f}', 'Frequency': '{:.0f}', 'Monetary': '{:.0f}'})
-            .to_html(), unsafe_allow_html=True)
+st.dataframe(rfm_df.head())
 
 # Insight RFM Analysis
 st.markdown("""
@@ -197,6 +173,7 @@ st.markdown("""
     - Pengguna cenderung lebih aktif pada hari-hari yang hangat dan tidak terlalu lembap.
     - Faktor cuaca ini dapat digunakan untuk memprediksi permintaan penyewaan sepeda.
 """)
+
 # Conclusion
 st.subheader('📝 Kesimpulan')
 st.write(
