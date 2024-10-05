@@ -113,24 +113,25 @@ df['Monetary'] = df['cnt']  # Jumlah penyewaan per hari
 # Menggabungkan nilai RFM
 rfm_df = df[['dteday', 'Recency', 'Frequency', 'Monetary']]
 
-# Tampilkan DataFrame RFM dengan format HTML
-st.write("Tabel RFM Analysis:")
-st.markdown(rfm_df.style.set_table_attributes('style="width: 100%; border-collapse: collapse;"')
-            .set_table_styles(
-                [{'selector': 'th',
-                  'props': [('background-color', '#4CAF50'),
-                            ('color', 'white'),
-                            ('font-weight', 'bold'),
-                            ('text-align', 'center')]}]
-            ).hide_index()
-            .format({'Recency': '{:.0f}', 'Frequency': '{:.0f}', 'Monetary': '{:.0f}'})
-            .to_html(), unsafe_allow_html=True)
-
-# Insight RFM Analysis
+# Tampilkan DataFrame RFM dengan format yang lebih menarik
+st.subheader("📊 RFM Analysis")
 st.markdown("""
-    **Insight RFM Analysis**:
-    - Jumlah penyewaan harian sangat bervariasi, dengan puncak selama musim panas (Juni hingga Agustus).
-    - Permintaan sepeda lebih tinggi pada musim panas, menciptakan peluang bisnis yang lebih besar.
+    **RFM Analysis** membantu memahami perilaku penyewaan sepeda berdasarkan tiga faktor utama:
+    - **Recency**: Seberapa baru penyewaan terakhir.
+    - **Frequency**: Frekuensi penyewaan sepeda.
+    - **Monetary**: Jumlah penyewaan sepeda per hari.
+""")
+
+# Tampilkan DataFrame RFM
+st.write("Tabel RFM Analysis:")
+st.dataframe(rfm_df.head().style.applymap(lambda x: 'background-color: #4CAF50' if x == rfm_df['Recency'].min() else '', subset=['Recency']))  # Highlight Recency terendah
+
+# Menambahkan informasi tambahan
+st.markdown("""
+    **Insight**: 
+    - **Recency** menunjukkan berapa lama sejak penyewaan terakhir, di mana nilai lebih rendah berarti penyewaan lebih baru.
+    - **Frequency** mencerminkan berapa kali penyewaan terjadi.
+    - **Monetary** mewakili jumlah total penyewaan sepeda per hari, memberikan gambaran tentang tren penyewaan.
 """)
 
 # ---- Geoanalysis ----
