@@ -31,9 +31,9 @@ st.subheader("📊 Dataset")
 st.dataframe(df)  # Menampilkan DataFrame
 st.write("-Dataset terdiri dari beberapa fitur seperti hari, musim, suhu, kelembaban, dan jumlah sepeda yang disewa per hari.")
 st.write("-Anda dapat melihat beberapa variabel yang mungkin mempengaruhi penyewaan, seperti cuaca dan musim.")
+st.markdown("---")
 
 ### Assessing Data
-
 # Tampilkan head dataset
 st.subheader("📋 5 Baris Pertama dari Dataset:")
 st.write(df.head())
@@ -43,6 +43,7 @@ else:
     st.error("❌ Ada missing values pada dataset.")
 # Insight
 st.write("Insight: Beberapa fitur numerik seperti 'temp' (suhu) dan 'cnt' (jumlah sepeda) mungkin perlu divisualisasikan lebih lanjut untuk melihat distribusi data.")
+st.markdown("---")
 
 # Check for outliers
 st.subheader("📈 Statistik Deskriptif:")
