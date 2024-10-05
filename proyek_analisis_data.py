@@ -67,7 +67,7 @@ st.pyplot(season_fig)
 # Insight
 st.write("Insight: Penggunaan sepeda tampak lebih tinggi selama musim panas dan lebih rendah di musim dingin.")
 
-st.markdown("<hr style='border: 2px solid #4CAF50;'>", unsafe_allow_html=True)
+st.markdown("---")
 
 ### Pertanyaan 1:
 # Correlation Analysis
@@ -78,7 +78,7 @@ sns.heatmap(correlation, annot=True, cmap='YlGnBu', fmt=".2f")  # Changed color 
 plt.title('Korelasi antara Variabel Cuaca dan Penyewaan Sepeda', fontsize=16)
 st.pyplot(plt.gcf())
 
-st.markdown("<hr style='border: 2px solid #4CAF50;'>", unsafe_allow_html=True)
+st.markdown("---")
 
 ### Pertanyaan 2
 # Monthly bike rentals
