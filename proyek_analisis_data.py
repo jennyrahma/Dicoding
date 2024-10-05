@@ -125,9 +125,18 @@ df['Monetary'] = df['cnt']  # Jumlah penyewaan per hari
 # Menggabungkan nilai RFM
 rfm_df = df[['dteday', 'Recency', 'Frequency', 'Monetary']]
 
-# Tampilkan DataFrame RFM
+# Tampilkan DataFrame RFM dengan format HTML
 st.write("Tabel RFM Analysis:")
-st.dataframe(rfm_df.head())
+st.markdown(rfm_df.style.set_table_attributes('style="width: 100%; border-collapse: collapse;"')
+            .set_table_styles(
+                [{'selector': 'th',
+                  'props': [('background-color', '#4CAF50'),
+                            ('color', 'white'),
+                            ('font-weight', 'bold'),
+                            ('text-align', 'center')]}]
+            ).hide_index()
+            .format({'Recency': '{:.0f}', 'Frequency': '{:.0f}', 'Monetary': '{:.0f}'})
+            .to_html(), unsafe_allow_html=True)
 
 # Insight RFM Analysis
 st.markdown("""
@@ -188,11 +197,6 @@ st.markdown("""
     - Pengguna cenderung lebih aktif pada hari-hari yang hangat dan tidak terlalu lembap.
     - Faktor cuaca ini dapat digunakan untuk memprediksi permintaan penyewaan sepeda.
 """)
-
-# ---- Footer ----
-st.markdown("---")
-st.markdown("📊 *Data diambil dari Bike Sharing Dataset*")
-
 # Conclusion
 st.subheader('📝 Kesimpulan')
 st.write(
