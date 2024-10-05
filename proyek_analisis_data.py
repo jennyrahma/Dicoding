@@ -91,6 +91,9 @@ st.pyplot(month_fig)
 st.markdown("<h1 style='text-align: center; color: #4CAF50;'>🚴 Analisis Lanjutan: Bike Sharing Dataset</h1>", unsafe_allow_html=True)
 st.markdown("<hr style='border: 2px solid #4CAF50;'>", unsafe_allow_html=True)
 
+# Load dataset
+df = pd.read_csv('day.csv')
+
 # ---- RFM Analysis ----
 st.subheader("📊 RFM Analysis")
 st.markdown("""
@@ -110,9 +113,18 @@ df['Monetary'] = df['cnt']  # Jumlah penyewaan per hari
 # Menggabungkan nilai RFM
 rfm_df = df[['dteday', 'Recency', 'Frequency', 'Monetary']]
 
-# Menampilkan tabel dengan style
-styled_rfm = rfm_df.head().style.set_properties(**{
-    'background-color': '#f0f0f0',  #
+# Tampilkan DataFrame RFM dengan format HTML
+st.write("Tabel RFM Analysis:")
+st.markdown(rfm_df.style.set_table_attributes('style="width: 100%; border-collapse: collapse;"')
+            .set_table_styles(
+                [{'selector': 'th',
+                  'props': [('background-color', '#4CAF50'),
+                            ('color', 'white'),
+                            ('font-weight', 'bold'),
+                            ('text-align', 'center')]}]
+            ).hide_index()
+            .format({'Recency': '{:.0f}', 'Frequency': '{:.0f}', 'Monetary': '{:.0f}'})
+            .to_html(), unsafe_allow_html=True)
 
 # Insight RFM Analysis
 st.markdown("""
