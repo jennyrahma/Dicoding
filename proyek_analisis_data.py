@@ -44,6 +44,8 @@ else:
 # Insight
 st.write("Insight: Beberapa fitur numerik seperti 'temp' (suhu) dan 'cnt' (jumlah sepeda) mungkin perlu divisualisasikan lebih lanjut untuk melihat distribusi data.")
 
+st.markdown("<hr style='border: 2px solid #4CAF50;'>", unsafe_allow_html=True)
+
 # Check for outliers
 st.subheader("📈 Statistik Deskriptif:")
 st.write(df.describe())
@@ -65,6 +67,8 @@ st.pyplot(season_fig)
 # Insight
 st.write("Insight: Penggunaan sepeda tampak lebih tinggi selama musim panas dan lebih rendah di musim dingin.")
 
+st.markdown("<hr style='border: 2px solid #4CAF50;'>", unsafe_allow_html=True)
+
 ### Pertanyaan 1:
 # Correlation Analysis
 st.subheader('📊 Analisis Korelasi')
@@ -73,6 +77,8 @@ plt.figure(figsize=(8, 6))
 sns.heatmap(correlation, annot=True, cmap='YlGnBu', fmt=".2f")  # Changed color palette
 plt.title('Korelasi antara Variabel Cuaca dan Penyewaan Sepeda', fontsize=16)
 st.pyplot(plt.gcf())
+
+st.markdown("<hr style='border: 2px solid #4CAF50;'>", unsafe_allow_html=True)
 
 ### Pertanyaan 2
 # Monthly bike rentals
@@ -85,8 +91,9 @@ plt.xlabel('Bulan', fontsize=12)
 plt.ylabel('Jumlah Penyewaan', fontsize=12)
 st.pyplot(month_fig)
 
+st.markdown("<hr style='border: 2px solid #4CAF50;'>", unsafe_allow_html=True)
+
 ## Analisis Lanjutan (Opsional)
-# ---- RFM Analysis ----
 # Add header and title
 st.markdown("<h1 style='text-align: center; color: #4CAF50;'>🚴 Analisis Lanjutan: Bike Sharing Dataset</h1>", unsafe_allow_html=True)
 st.markdown("<hr style='border: 2px solid #4CAF50;'>", unsafe_allow_html=True)
@@ -121,13 +128,14 @@ st.markdown("""
     - **Frequency** mencerminkan berapa kali penyewaan terjadi.
     - **Monetary** mewakili jumlah total penyewaan sepeda per hari, memberikan gambaran tentang tren penyewaan.
 """)
+st.markdown("<hr style='border: 2px solid #4CAF50;'>", unsafe_allow_html=True)
 
 # ---- Geoanalysis ----
 st.subheader("🗺️ Geoanalysis berdasarkan Musim")
 st.markdown("Visualisasi penyewaan sepeda berdasarkan musim:")
 
 # Plot Geoanalysis
-plt.figure(figsize=(8, 5))
+plt.figure(figsize=(9, 5))
 sns.scatterplot(x='season', y='cnt', size='cnt', sizes=(20, 200), data=df, alpha=0.6, palette='coolwarm')
 plt.title('Penyewaan Sepeda Berdasarkan Musim', fontsize=16)
 plt.xlabel('Musim', fontsize=12)
@@ -141,6 +149,8 @@ st.markdown("""
     - Tingkat penyewaan tertinggi terjadi selama musim panas dan terendah pada musim dingin.
     - Pemilik bisnis dapat merencanakan persediaan dan promosi musiman dengan lebih efektif.
 """)
+
+st.markdown("<hr style='border: 2px solid #4CAF50;'>", unsafe_allow_html=True)
 
 # ---- Clustering ----
 st.subheader("🔍 Clustering Berdasarkan Suhu dan Kelembapan")
@@ -159,7 +169,7 @@ centroids = data.groupby(np.floor(data.index / (len(data) / num_clusters))).mean
 data['Cluster'] = (data.index // (len(data) // num_clusters))
 
 # Plot Clustering
-plt.figure(figsize=(8, 5))
+plt.figure(figsize=(9, 5))
 sns.scatterplot(x='atemp', y='hum', hue='Cluster', data=data, palette='Set1', alpha=0.6)
 plt.scatter(centroids['atemp'], centroids['hum'], color='black', marker='X', s=100, label='Centroids')
 plt.title('Clustering Penyewaan Sepeda Berdasarkan Suhu dan Kelembapan', fontsize=16)
@@ -174,6 +184,8 @@ st.markdown("""
     - Pengguna cenderung lebih aktif pada hari-hari yang hangat dan tidak terlalu lembap.
     - Faktor cuaca ini dapat digunakan untuk memprediksi permintaan penyewaan sepeda.
 """)
+
+st.markdown("<hr style='border: 2px solid #4CAF50;'>", unsafe_allow_html=True)
 
 # Conclusion
 st.subheader('📝 Kesimpulan')
