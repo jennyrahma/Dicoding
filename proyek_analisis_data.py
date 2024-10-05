@@ -110,9 +110,9 @@ df['Monetary'] = df['cnt']  # Jumlah penyewaan per hari
 # Menggabungkan nilai RFM
 rfm_df = df[['dteday', 'Recency', 'Frequency', 'Monetary']]
 
-# Tampilkan DataFrame RFM
-st.write("Tabel RFM Analysis:")
-st.dataframe(rfm_df.head())
+# Menampilkan tabel dengan style
+styled_rfm = rfm_df.head().style.set_properties(**{
+    'background-color': '#f0f0f0',  #
 
 # Insight RFM Analysis
 st.markdown("""
